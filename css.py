@@ -2,6 +2,7 @@ import time
 import pyautogui
 import pygetwindow as gw
 import argparse
+import sys
 
 # Initialize argument parser
 parser = argparse.ArgumentParser(description="Run commands with keybinds.")
@@ -24,7 +25,7 @@ command_map = {
 
 if args.command == 'help':
 	print("--> build: 'ctrl+b'\n--> rebuild: 'ctrl+shift+b'\n--> clean: 'ctrl+alt+c'\n--> debug: 'f11'")
-	exit()
+	sys.exit()
 
 # Get the corresponding keybind for the command
 keybind = command_map.get(args.command, None)
