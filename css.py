@@ -20,12 +20,18 @@ command_map = {
     'rebuild': 'ctrl+shift+b',
     'clean': 'ctrl+alt+c',
     'debug': 'f11',
+	'terminate':'ctrl+f2',
+	'resume':'f8',
+	'suspend':'alt+f8',
     # Add more commands as needed
 }
 
 if args.command == 'help':
-	print("--> build: 'ctrl+b'\n--> rebuild: 'ctrl+shift+b'\n--> clean: 'ctrl+alt+c'\n--> debug: 'f11'")
-	sys.exit()
+    print("Available Commands and Their Keybinds:")
+    for command, keybind in command_map.items():
+        print(f"  - {command}: {keybind}")
+    sys.exit()
+
 
 # Get the corresponding keybind for the command
 keybind = command_map.get(args.command, None)
